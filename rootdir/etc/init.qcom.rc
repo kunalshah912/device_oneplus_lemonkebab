@@ -85,6 +85,8 @@ on init
     # Vibration intensity
     chown system system /sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level
 
+    setprop vendor.boot.project_name ${ro.boot.project_name}
+
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 

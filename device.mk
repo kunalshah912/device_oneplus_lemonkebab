@@ -34,6 +34,9 @@ PRODUCT_PACKAGES += SnapdragonCamera2
 PRODUCT_BOARD_PLATFORM := kona
 PRODUCT_USES_QCOM_HARDWARE := true
 
+# Inherit packages from vendor/oneplus/addons/camera
+$(call inherit-product, vendor/oneplus/addons/camera/camera-vendor.mk)
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -250,7 +253,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service_64 \
     Snap \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
-    android.frameworks.displayservice@1.0.vendor
+    android.frameworks.displayservice@1.0.vendor \
+    libcamera2ndk_vendor
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -264,6 +268,7 @@ PRODUCT_PACKAGES += \
     init.oem.rc \
     init.oem.sec.rc \
     init.oem_ftm.rc \
+    init.oneplus.camera.rc \
     init.oplus_chg.sh \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
@@ -407,6 +412,9 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
     libhwbinder.vendor
 
 # HotwordEnrollement app permissions
