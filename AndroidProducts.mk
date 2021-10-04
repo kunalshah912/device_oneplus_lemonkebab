@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_lemonades.mk
+    $(LOCAL_DIR)/dot_lemonades.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_lemonades-user \
-    lineage_lemonades-userdebug \
-    lineage_lemonades-eng
+    dot_lemonades-user \
+    dot_lemonades-userdebug \
+    dot_lemonades-eng
