@@ -29,6 +29,7 @@
     <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
      vibrator is capable of subtle vibrations -->
     <bool name="config_vibrateOnIconAnimation">true</bool>
+    <integer name="config_udfpsEnrollProgressBar" translatable="false">100</integer>
 
     <!-- Default rounded corner curve (a Bezier). Must match (the curved path in) rounded.xml.
          Note that while rounded.xml includes the entire path (including the horizontal and vertical
