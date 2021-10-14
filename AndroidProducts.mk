@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_lemonades.mk
+    $(LOCAL_DIR)/aosp_lemonades.mk
 
 COMMON_LUNCH_CHOICES := \
-    dot_lemonades-user \
-    dot_lemonades-userdebug \
-    dot_lemonades-eng
+    aosp_lemonades-user \
+    aosp_lemonades-userdebug \
+    aosp_lemonades-eng
