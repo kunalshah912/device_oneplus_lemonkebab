@@ -32,6 +32,7 @@
 #define OP_FINISH_FP_ENROLL 10
 #define OP_DISPLAY_SET_DIM 10
 #define OP_DISPLAY_NOTIFY_PRESS 9
+#define OP_DISPLAY_AOD_MODE 8
 
 namespace android {
 namespace hardware {
@@ -231,6 +232,7 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
         uint32_t gid) {
+    mVendorDisplayService->setMode(OP_DISPLAY_AOD_MODE, 0);
     mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     mVendorFpService->updateStatus(OP_ENABLE_FP_LONGPRESS);
     return ErrorFilter(mDevice->authenticate(mDevice, operationId, gid));
