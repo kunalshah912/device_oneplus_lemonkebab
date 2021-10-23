@@ -142,7 +142,6 @@
         <interface>
             <name>ISecureElement</name>
             <instance>SIM1</instance>
-            <instance>eSE1</instance>
             <instance>eSE2</instance>
         </interface>
         <fqname>@1.2::ISecureElement/SIM2</fqname>
