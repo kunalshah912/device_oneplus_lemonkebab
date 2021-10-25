@@ -57,6 +57,7 @@ Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69
 }
 
 Return<RequestStatus> BiometricsFingerprint::postEnroll() {
+    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     this->mVendorFpService->updateStatus(OP_ENABLE_FP_LONGPRESS);
     return biometrics_2_1_service->postEnroll();
 }
@@ -66,6 +67,7 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
+    this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     this->mVendorFpService->updateStatus(OP_FINISH_FP_ENROLL);
     return biometrics_2_1_service->cancel();
 }
@@ -83,9 +85,8 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid, const 
 }
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId, uint32_t gid) {
-    this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
-    this->mVendorFpService->updateStatus(OP_ENABLE_FP_LONGPRESS);
     this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
+    this->mVendorFpService->updateStatus(OP_ENABLE_FP_LONGPRESS);
     return biometrics_2_1_service->authenticate(operationId, gid);
 }
 
@@ -104,7 +105,6 @@ Return<void> BiometricsFingerprint::onFingerUp() {
     this->mFodCircleVisible = false;
     this->mVendorDisplayService->setMode(OP_DISPLAY_SET_DIM, 0);
     this->mVendorDisplayService->setMode(OP_DISPLAY_NOTIFY_PRESS, 0);
-
     return Void();
 }
 
