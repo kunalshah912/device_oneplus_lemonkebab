@@ -35,7 +35,7 @@ PRODUCT_BOARD_PLATFORM := kona
 PRODUCT_USES_QCOM_HARDWARE := true
 
 # Inherit packages from vendor/oneplus/addons/camera
-$(call inherit-product, vendor/oneplus/addons/camera/camera-vendor.mk)
+#$(call inherit-product, vendor/oneplus/addons/camera/camera-vendor.mk)
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
