@@ -207,7 +207,10 @@ PRODUCT_PACKAGES += \
   vendor.qti.hardware.btconfigstore@2.3.vendor \
   vendor.qti.hardware.btconfigstore@2.0 \
   vendor.qti.hardware.btconfigstore@2.0.vendor \
-  
+
+# Camera
+PRODUCT_PACKAGES += \
+    Camera2
 
 # Crypto
 PRODUCT_PACKAGES += \
