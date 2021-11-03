@@ -27,6 +27,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),lemonades)
+ifeq ($(TARGET_DEVICE),lemonkebab)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
