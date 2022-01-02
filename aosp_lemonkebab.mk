@@ -38,3 +38,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 #GApps
 WITH_GAPPS := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
+
+#Lawnchair
+$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
