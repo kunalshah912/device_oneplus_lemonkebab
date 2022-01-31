@@ -37,6 +37,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 #GApps
 WITH_GAPPS := true
+
+TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 
 #Lawnchair
